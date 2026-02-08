@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Baroque</title>
-
+  <title>Rococo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+	
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -10,17 +11,17 @@
       font-family: 'Lora', Georgia, serif;
       text-align: center;
       background-image:
-        linear-gradient(rgba(227,243,252,0.65), rgba(227,243,252,0.65)),
-        url("https://www.visituffizi.org/img/artworks/caravaggio-bacchus.jpg");
+        linear-gradient(rgba(227,243,252,0.5), rgba(227,243,252,0.5)),
+        url("https://artincontext.org/wp-content/uploads/2021/11/Rococo-Art-Portrait.avif");
       background-size: cover;
-      background-position: center;
+      background-position: 45% 35%;
       background-attachment: fixed;
       -webkit-font-smoothing: antialiased;
       padding: 80px 20px;
     }
 
     .content {
-      background: rgba(227, 243, 252, 0.9);
+      background: rgba(227, 243, 252, 0.5);
       backdrop-filter: blur(4px);
       color: #5d2725;
       padding: 64px 32px;
@@ -47,11 +48,15 @@
     }
 
     p {
-      font-size: 1.125rem;
-      color: #5a6a7a;
-      line-height: 1.75;
-      margin-bottom: 30px;
-    }
+  font-size: 1.125rem;
+  color: #282421;
+  line-height: 1.75;
+  margin-bottom: 30px;
+  text-align: left;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
     /* IMAGE SECTION */
     .art-section {
@@ -59,24 +64,57 @@
     }
 
     .art-section img {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
-    }
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  margin-bottom: 20px; /* space between painting and text */
+}
+
+.art-info {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.artist {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #5d2725;
+  opacity: 0.8;
+  margin-bottom: 10px; /* space between artist and title */
+}
+
+.artwork-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #5d2725;
+  margin-bottom: 8px; /* space before description */
+}
 
     .caption-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-top: 14px;
-    }
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 14px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
     .caption-sub {
-      font-size: 0.95rem;
-      color: #5a6a7a;
-      margin-top: 4px;
-    }
+  font-size: 0.95rem;
+  color: #282421;
+  margin-top: 6px;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
     a {
       display: inline-block;
@@ -90,41 +128,58 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
   </style>
 </head>
 
 <body>
 
   <div class="content">
-    <h1>Rococo (1600 – 1750)</h1>
+    <h1>Rococo (1730 – 1770)</h1>
     <div class="divider"></div>
 
-    <p>
-      Rococo is elegance..
-    </p>
+    <ul style="margin-bottom:30px; line-height:1.75; max-width:750px; margin-left:auto; margin-right:auto; padding-left:1.2em; text-align:left;">
+      <li>Think palace luxury, curling gold details, and rooms that feel over decorated but elegant</li>
+      <li>Soft pastel colors everywhere, like a clash of pastel and the dreamy look of Marie Antoinette</li>
+      <li>Romantic, floral settings with gardens, ribbons, and nature woven into the scene</li>
+      <li>Flirty, playful moments with couples lounging, chatting, or showing off silky fashion</li>
+      <li>Light, sweet, and decorative overall, more like dessert than a serious dramatic scene, which makes Rococo easy to spot</li>
+    </ul>
 
     <!-- ARTWORK 1 -->
     <div class="art-section">
-      <img src="PASTE-IMAGE-LINK.jpg" alt="Artwork">
-      <div class="caption-title">Artist Name — Painting Title</div>
-      <div class="caption-sub">1–2 sentence description or key detail.</div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Fragonard_musical.jpg" alt="The Music Lesson by Jean-Honoré Fragonard"> 
+      <div class="art-info">
+  <div class="artist">Jean-Honoré Fragonard</div>
+  <div class="artwork-title">The Music Lesson</div>
+      <div class="caption-sub">The Musical Contest is basically an 18th-century flirt-off in a fancy garden. Two guys are trying to impress a woman by making music, not to save the world, just to win her attention. Everything feels light, romantic, and a little playful, from the soft pastel colors to the lush greenery and elegant outfits. No drama, no deep tragedy, just charm, beauty, and good vibes. That focus on love, leisure, nature, and decoration over serious subjects is exactly what makes this painting so typically Rococo.</div> 
     </div>
 
     <!-- ARTWORK 2 -->
     <div class="art-section">
-      <img src="PASTE-SECOND-IMAGE.jpg" alt="Artwork">
-      <div class="caption-title">Artist Name — Painting Title</div>
-      <div class="caption-sub">What makes this Baroque? Light, movement, drama, etc.</div>
+      <img src="https://artincontext.org/wp-content/uploads/2021/11/Rococo-Art-Portrait.avif" alt="Madame de Pompadour by François Boucher">  
+      <div class="art-info">
+  <div class="artist">François Boucher</div>
+  <div class="artwork-title">Portrait of Madame de Pompadour</div>
+      <div class="caption-sub">Madame de Pompadour by François Boucher looks Rococo because everything feels light, decorative, and elegant rather than serious or dramatic. Soft pastel colors, silky fabrics, flowers, curved shapes, and a relaxed, luxurious setting make the scene feel playful, refined, and focused on beauty and pleasure — all key visual traits of Rococo art. </div>
     </div>
 
     <!-- ARTWORK 3 -->
     <div class="art-section">
-      <img src="PASTE-THIRD-IMAGE.jpg" alt="Artwork">
-      <div class="caption-title">Artist Name — Painting Title</div>
-      <div class="caption-sub">Optional third example.</div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Louise_Elisabeth_Vig%C3%A9e-Lebrun_-_Marie-Antoinette_dit_%C2%AB_%C3%A0_la_Rose_%C2%BB_-_Google_Art_Project.jpg/1280px-Louise_Elisabeth_Vig%C3%A9e-Lebrun_-_Marie-Antoinette_dit_%C2%AB_%C3%A0_la_Rose_%C2%BB_-_Google_Art_Project.jpg" alt="Marie-Antoinette in a Rose Dress by Louise Elisabeth Vigée Le Brun">
+      <div class="art-info">
+  <div class="artist">Elisabeth Vigée Le Brun</div>
+  <div class="artwork-title">Marie-Antoinette in a Rose Dress</div>
+      <div class="caption-sub">This portrait of Marie-Antoinette by Elisabeth Vigée Le Brun shows key Rococo features: soft pastel colors, delicate details, and a light, playful mood. The elegant pose, floral background, and focus on beauty and luxury are typical of Rococo art, which often celebrated aristocratic life and romantic themes with a sense of whimsy and charm.</div>
     </div>
 
-    <a href="index.html">← Back to Gallery</a>
+    <a href="index.html">← Back to Timeline</a>
 
   </div>
 

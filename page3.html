@@ -1,11 +1,190 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page</title>
+  <title>Neoclassicism</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+	
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      text-align: center;
+      background-image:
+        linear-gradient(rgba(227,243,252,0.5), rgba(227,243,252,0.5)),
+        url("https://www.visituffizi.org/img/artworks/caravaggio-bacchus.jpg");
+      background-size: cover;
+      background-position: 35% 25%;
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      padding: 80px 20px;
+    }
+
+    .content {
+      background: rgba(227, 243, 252, 0.5);
+      backdrop-filter: blur(4px);
+      color: #5d2725;
+      padding: 64px 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+
+    .divider {
+      width: 64px;
+      height: 2px;
+      background: #5d2725;
+      margin: 0 auto 24px;
+    }
+
+    p {
+  font-size: 1.125rem;
+  color: #282421;
+  line-height: 1.75;
+  margin-bottom: 30px;
+  text-align: left;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+    /* IMAGE SECTION */
+    .art-section {
+      margin: 50px 0;
+    }
+
+    .art-section img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  margin-bottom: 20px; /* space between painting and text */
+}
+
+.art-info {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.artist {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #5d2725;
+  opacity: 0.8;
+  margin-bottom: 10px; /* space between artist and title */
+}
+
+.artwork-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #5d2725;
+  margin-bottom: 8px; /* space before description */
+}
+
+    .caption-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 14px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+    .caption-sub {
+  font-size: 0.95rem;
+  color: #282421;
+  margin-top: 6px;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+    a {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #b8903a;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+  </style>
 </head>
-<body style="font-family: Arial; text-align: center; padding: 60px;">
-  <h1>This is a page</h1>
-  <p>You clicked an image.</p>
-  <a href="index.html">Go back</a>
+
+<body>
+
+  <div class="content">
+    <h1>Baroque (1600 – 1750)</h1>
+    <div class="divider"></div>
+
+    <ul style="margin-bottom:30px; line-height:1.75; max-width:750px; margin-left:auto; margin-right:auto; padding-left:1.2em; text-align:left;">
+      <li>When people look at Baroque paintings like those by Caravaggio or Peter Paul Rubens, they notice strong contrast between light and shadow.</li>
+      <li>The figures look caught mid-action, with twisting bodies and dramatic gestures instead of stiff poses.</li>
+      <li>The scene often feels diagonal and energetic rather than balanced and calm.</li>
+      <li>Faces show big, clear emotions, and textures such as skin, fabric, and metal look rich and real.</li>
+      <li>All of this makes the work feel intense and theatrical — a key sign of Baroque art.</li>
+    </ul>
+
+    <!-- ARTWORK 1 -->
+    <div class="art-section">
+      <img src="https://www.datocms-assets.com/103094/1688661508-1506165873655660-artemisia-giuditta-principale.jpg?auto=format%2Ccompress&cs=srgb&max-w=800" alt="Judith Beheading Holofernes painting by Artemisia Gentileschi">
+      <div class="art-info">
+  <div class="artist">Artemisia Gentileschi</div>
+  <div class="artwork-title">Judith Beheading Holofernes</div>
+      <div class="caption-sub">Judith Beheading Holofernes by Artemisia Gentileschi shows key Baroque features: strong contrast between light and dark, a violent scene shown at its most intense moment, and figures that look solid and physically engaged. The tight framing, visible effort in the bodies, and clear emotion create drama and realism that are typical of Baroque painting. </div>
+    </div>
+
+    <!-- ARTWORK 2 -->
+    <div class="art-section">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/960px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg" alt="Las Meninas painting by Diego Velázquez">
+      <div class="art-info">
+  <div class="artist">Diego Velázquez</div>
+  <div class="artwork-title">Las Meninas</div>
+      <div class="caption-sub">Las Meninas by Diego Velázquez shows key Baroque traits: strong light-and-dark contrast, realistic people caught in a natural moment, and a deep, believable space that pulls you into the room. It also feels dramatic and alive, making you part of the scene rather than just someone looking at a flat picture.</div>
+    </div>
+
+    <!-- ARTWORK 3 -->
+    <div class="art-section">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Peter_Paul_Rubens_-_The_Apotheosis_of_Henry_IV_and_the_Proclamation_of_the_Regency_of_Marie_de_M%C3%A9dicis_-_WGA20342.jpg/960px-Peter_Paul_Rubens_-_The_Apotheosis_of_Henry_IV_and_the_Proclamation_of_the_Regency_of_Marie_de_M%C3%A9dicis_-_WGA20342.jpg?20230414204055"
+     alt="The Apotheosis of Henry IV and the Proclamation of the Regency of Marie de Médici by Peter Paul Rubens">
+      <div class="art-info">
+  <div class="artist">Peter Paul Rubens</div>
+  <div class="artwork-title">The Apotheosis of Henry IV and the Proclamation of the Regency of Marie de Médici</div>
+      <div class="caption-sub">This painting by renowned Flemish Baroque artist, Peter Paul Rubens, shows the style through swirling movement, crowded figures, and a dramatic mix of heaven and earth in one energetic scene. Bright light, rich color, and larger-than-life bodies create a sense of grandeur and motion, making the event feel powerful and theatrical rather than calm or still.</div>
+    </div>
+
+    <a href="index.html">← Back to Timeline</a>
+
+  </div>
+
 </body>
 </html>
+
