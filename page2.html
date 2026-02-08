@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baroque</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      text-align: center;
+      background-image:
+        linear-gradient(rgba(227,243,252,0.65), rgba(227,243,252,0.65)),
+        url("https://www.visituffizi.org/img/artworks/caravaggio-bacchus.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      padding: 80px 20px;
+    }
+
+    .content {
+      background: rgba(227, 243, 252, 0.9);
+      backdrop-filter: blur(4px);
+      color: #5d2725;
+      padding: 64px 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+
+    .divider {
+      width: 64px;
+      height: 2px;
+      background: #5d2725;
+      margin: 0 auto 24px;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: #5a6a7a;
+      line-height: 1.75;
+      margin-bottom: 30px;
+    }
+
+    /* IMAGE SECTION */
+    .art-section {
+      margin: 50px 0;
+    }
+
+    .art-section img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    }
+
+    .caption-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 14px;
+    }
+
+    .caption-sub {
+      font-size: 0.95rem;
+      color: #5a6a7a;
+      margin-top: 4px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #b8903a;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="content">
+    <h1>Rococo (1600 – 1750)</h1>
+    <div class="divider"></div>
+
+    <p>
+      Rococo is elegance..
+    </p>
+
+    <!-- ARTWORK 1 -->
+    <div class="art-section">
+      <img src="PASTE-IMAGE-LINK.jpg" alt="Artwork">
+      <div class="caption-title">Artist Name — Painting Title</div>
+      <div class="caption-sub">1–2 sentence description or key detail.</div>
+    </div>
+
+    <!-- ARTWORK 2 -->
+    <div class="art-section">
+      <img src="PASTE-SECOND-IMAGE.jpg" alt="Artwork">
+      <div class="caption-title">Artist Name — Painting Title</div>
+      <div class="caption-sub">What makes this Baroque? Light, movement, drama, etc.</div>
+    </div>
+
+    <!-- ARTWORK 3 -->
+    <div class="art-section">
+      <img src="PASTE-THIRD-IMAGE.jpg" alt="Artwork">
+      <div class="caption-title">Artist Name — Painting Title</div>
+      <div class="caption-sub">Optional third example.</div>
+    </div>
+
+    <a href="index.html">← Back to Gallery</a>
+
+  </div>
+
+</body>
+</html>
+
