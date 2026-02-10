@@ -54,7 +54,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
-      padding: 48px 24px;
+      padding: 0px 24px;
       max-width: 896px;
       margin: 0 auto;
     }
@@ -141,6 +141,94 @@
   }
 }
 
+ .timeline {
+  max-width: 920px;
+  margin: 40px auto;
+  padding: 50px 12px;
+  position: relative;
+  backdrop-filter: blur(2px);
+}
+
+/* Center line */
+.timeline-line {
+  position: absolute;
+  left: -4%;
+  right: -4%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(2,13,36,0.15),
+    rgba(2,13,36,0.65),
+    rgba(2,13,36,0.15)
+  );
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Grid */
+.timeline-items {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(100px, 1fr));
+  gap: 6px;
+  align-items: center;
+  padding: 0 12px;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+}
+
+/* Base item styling */
+.timeline-item {
+  text-align: center;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: #1a2332;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.timeline-item span {
+  display: block;
+}
+
+.timeline-item span small {
+  display: block;
+  font-size: 0.72rem;
+  color: #6b7a8c;
+  margin-top: 2px;
+}
+
+/* Vertical placement */
+.timeline-item.up   { margin-bottom: 95px; }
+.timeline-item.down { margin-top: 95px; }
+
+/* Hover polish */
+.timeline-item:hover {
+  transform: translateY(-2px);
+  color: #000;
+}
+
+.timeline-items a {
+  color: inherit;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Mobile scroll */
+@media (max-width: 900px) {
+  .timeline-items {
+    overflow-x: auto;
+  }
+  .timeline-item {
+    min-width: 100px;
+  }
+}
+
   </style>
 </head>
 
@@ -150,6 +238,22 @@
     <h1>Art history for dummies</h1>
     <div class="divider"></div>
     <p>For people going to museums with no prior knowledge of art but want to pretend to know what they are talking about.</p>
+  </div>
+
+  <!-- Timeline: alternating horizontal slots -->
+  <div class="timeline" aria-label="Art timeline">
+    <div class="timeline-line" aria-hidden="true"></div>
+    <ol class="timeline-items">
+      <li class="timeline-item up"><span>Gothic (1150 - 1450)</span></li>
+      <li class="timeline-item down"><span>Renaissance (1350 - 1620)</span></li>
+      <li class="timeline-item up"><span>Northern Renaissance (1430 - 1580)</span></li>
+      <li class="timeline-item down"><a href="page1.html"><span>Baroque (1600 - 1750)</span></a></li>
+      <li class="timeline-item up"><a href="page2.html"><span>Rococo (1730 - 1770)</span></a></li>
+      <li class="timeline-item down"><span>Academicism (1750 - 1850)</span></li>
+      <li class="timeline-item up"><a href="page3.html"><span>Neoclassicism (1750 - 1850)</span></a></li>
+      <li class="timeline-item down"><a href="page4.html"><span>Impressionism (1860 - 1890)</span></a></li>
+      <li class="timeline-item up"><span>Post-Impressionism (1880 - 1920)</span></li>
+    </ol>
   </div>
 
   <div class="images">

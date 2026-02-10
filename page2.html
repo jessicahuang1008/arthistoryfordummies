@@ -23,7 +23,7 @@
     .content {
       background: rgba(227, 243, 252, 0.5);
       backdrop-filter: blur(4px);
-      color: #1b2416;
+      color: #12401d;
       padding: 64px 32px;
       max-width: 900px;
       margin: 0 auto;
@@ -49,7 +49,7 @@
 
     p {
   font-size: 1.125rem;
-  color: #1b2416;
+  color: #12401d;
   line-height: 1.75;
   margin-bottom: 30px;
   text-align: left;
@@ -81,7 +81,7 @@
   font-size: 0.95rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #1b2416;
+  color: #12401d;
   opacity: 0.8;
   margin-bottom: 10px; /* space between artist and title */
 }
@@ -90,7 +90,7 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #1b2416;
+  color: #12401d;
   margin-bottom: 8px; /* space before description */
 }
 
@@ -138,6 +138,90 @@
   </style>
 </head>
 
+<!-- inserted carousel CSS from page1 -->
+  <style>
+    /* Artist carousel (5 circular slots, clickable to artist pages) */
+    .artist-carousel {
+      max-width: 700px;
+      margin: 2px auto 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .artist-carousel .track {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+    }
+
+    .artist-carousel a {
+      flex: 0 0 auto;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      border: 3px solid rgba(255,255,255,0.65);
+      scroll-snap-align: center;
+      background: #fff;
+      text-decoration: none;
+    }
+
+    .artist-carousel img { width: 100%; height: 100%; object-fit: cover; display:block; border-radius:50% }
+
+    /* label that appears on hover (last name only) */
+    .artist-carousel .artist-label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, 8px);
+      opacity: 0;
+      transition: opacity 220ms ease, transform 220ms ease;
+      pointer-events: none;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-weight: 600;
+      white-space: nowrap;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 4px 8px;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      transform-origin: center center;
+    }
+
+    .artist-carousel a:hover .artist-label { opacity: 1; transform: translate(-50%, 0); }
+
+    /* Zoom specific image (Peter Paul Rubens) */
+    .artist-carousel a.Boucher img {
+      transform: scale(2);
+      transform-origin: top center;
+      object-position: 30% 60%;
+    }
+
+    /* Zoom specific image (Nicolas Poussin) */
+    .artist-carousel a.Fragonard img {
+      transform: scale(1.6);
+      transform-origin: center center;
+      object-position: 60% 30%;
+    }
+
+    /* hide scrollbar on supported browsers */
+    .artist-carousel .track::-webkit-scrollbar { display: none; }
+    .artist-carousel .track { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .carousel-header { max-width:700px; margin: 32px auto 2px; text-align: center; }
+    .carousel-header h3 { font-family: 'Playfair Display', Georgia, serif; font-size:1.125rem; color:#1e406e; margin:0 0 6px; }
+    .carousel-header p { margin:0; color:#5d2725; font-size:0.95rem; line-height:1.6; }
+  </style>
+</head>
+
 <body>
 
   <div class="content">
@@ -145,11 +229,11 @@
     <div class="divider"></div>
 
     <ul style="margin-bottom:30px; line-height:1.75; max-width:750px; margin-left:auto; margin-right:auto; padding-left:1.2em; text-align:left;">
-      <li>Think palace luxury, curling gold details, and rooms that feel over decorated but elegant</li>
-      <li>Soft pastel colors everywhere, like a clash of pastel and the dreamy look of Marie Antoinette</li>
-      <li>Romantic, floral settings with gardens, ribbons, and nature woven into the scene</li>
-      <li>Flirty, playful moments with couples lounging, chatting, or showing off silky fashion</li>
-      <li>Light, sweet, and decorative overall, more like dessert than a serious dramatic scene, which makes Rococo easy to spot</li>
+      <li>Palace luxury, curling gold details, and rooms that feel over decorated but elegant</li>
+      <li>Soft pastel colors everywhere (think Sophia Coppola's 2006 Marie Antoinette  movie)</li>
+      <li>Romantic, floral settings with gardens, ribbons, and nature</li>
+      <li>Flirty, playful moments with couples lounging, chatting, or simply up to no good</li>
+      <li>Light, sweet, and decorative overall, like sweet dessert and that makes Rococo very easy to spot</li>
     </ul>
 
     <!-- ARTWORK 1 -->
@@ -158,8 +242,8 @@
       <div class="art-info">
   <div class="artist">Jean-Honoré Fragonard</div>
   <div class="artwork-title">The Music Lesson</div>
-      <div class="caption-sub">The Musical Contest is basically an 18th-century flirt-off in a fancy garden. Two guys are trying to impress a woman by making music, not to save the world, just to win her attention. Everything feels light, romantic, and a little playful, from the soft pastel colors to the lush greenery and elegant outfits. No drama, no deep tragedy, just charm, beauty, and good vibes. That focus on love, leisure, nature, and decoration over serious subjects is exactly what makes this painting so typically Rococo.</div> 
-    </div>
+      <div class="caption-sub">In this painting by Fragonard, everything looks soft, pastel, and carefree, which is why it reads Rococo right away. The scene is about flirting in a dreamy garden, not anything serious — flowing clothes, rosy faces, greenery, and gentle light make it feel romantic, fluffy, and unserious. Instead of drama or realism, the painting focuses on beauty, charm, and pleasure, which is exactly the visual vibe Rococo is known for.</div>
+    </div> 
 
     <!-- ARTWORK 2 -->
     <div class="art-section">
@@ -167,7 +251,7 @@
       <div class="art-info">
   <div class="artist">François Boucher</div>
   <div class="artwork-title">Portrait of Madame de Pompadour</div>
-      <div class="caption-sub">Madame de Pompadour by François Boucher looks Rococo because everything feels light, decorative, and elegant rather than serious or dramatic. Soft pastel colors, silky fabrics, flowers, curved shapes, and a relaxed, luxurious setting make the scene feel playful, refined, and focused on beauty and pleasure — all key visual traits of Rococo art. </div>
+      <div class="caption-sub">This painting screams Rococo: almost overly decadent yet still romantic and elegant. Soft pastel colors, silky fabrics, flowers, and a relaxed, luxurious setting make the scene feel playful, refined, and focused on beauty and pleasure — all key visual traits of Rococo art. </div>
     </div>
 
     <!-- ARTWORK 3 -->
@@ -176,7 +260,36 @@
       <div class="art-info">
   <div class="artist">Elisabeth Vigée Le Brun</div>
   <div class="artwork-title">Marie-Antoinette in a Rose Dress</div>
-      <div class="caption-sub">This portrait of Marie-Antoinette by Elisabeth Vigée Le Brun shows key Rococo features: soft pastel colors, delicate details, and a light, playful mood. The elegant pose, floral background, and focus on beauty and luxury are typical of Rococo art, which often celebrated aristocratic life and romantic themes with a sense of whimsy and charm.</div>
+      <div class="caption-sub">This portrait of Marie‑Antoinette feels Rococo immediately through its soft pastel palette, glowing skin, and feathery textures that make everything look light and elegant. The relaxed pose, fresh roses, and airy outdoor setting create a dreamy, decorative world focused on beauty, pleasure, and refinement. The painting evokes charm, luxury, and aristocratic fantasy.</div>
+    </div>
+
+    <div class="carousel-header">
+      <h3>Artist highlights</h3>
+    </div>
+    <!-- Artist carousel: five circular image slots linking to artist Wikipedia pages -->
+    <div class="artist-carousel" aria-label="Artist carousel">
+      <div class="track">
+        <a href="https://en.wikipedia.org/wiki/Jean-Honor%C3%A9_Fragonard" class="Fragonard" target="_blank" rel="noopener" aria-label="Jean Honore Fragonard">
+          <img src="https://uploads2.wikiart.org/images/jean-honore-fragonard/self-portrait-1770.jpg!Large.jpg" alt="Jean Honore Fragonard">
+          <span class="artist-label">Fragonard</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Fran%C3%A7ois_Boucher" class="Boucher" target="_blank" rel="noopener" aria-label="Francois Boucher">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Boucher_par_Gustav_Lundberg_1741.jpg" alt="Francois Boucher">
+          <span class="artist-label">Boucher</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/%C3%89lisabeth_Vig%C3%A9e_Le_Brun" class="Vigée Le Brun" target="_blank" rel="noopener" aria-label="Elisabeth Vigee Le Brun">
+          <img src="https://drrichardstemp.com/wp-content/uploads/2020/05/elvl-self-focus.jpg" alt="Elisabeth Vigee Le Brun">
+          <span class="artist-label">Vigée Le Brun</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Jean-Antoine_Watteau" class="Watteau" target="_blank" rel="noopener" aria-label="Jean-Antoine Watteau">
+          <img src="https://i.pinimg.com/736x/29/93/91/29939183a47d1c4e2f21ca2ad1b2e1dc.jpg" alt="Jean-Antoine Watteau">
+          <span class="artist-label">Watteau</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Rosalba_Carriera" class="Carriera" target="_blank" rel="noopener" aria-label="Rosalba Carriera">
+          <img src="https://www.arthistoryproject.com/site/assets/files/17719/rosalba-carriera-self-portrait-as-quot-winter-quot-1731-trivium-art-history.jpg" alt="Rosalba Carriera">
+          <span class="artist-label">Carriera</span>
+        </a>
+      </div>
     </div>
 
     <a href="index.html">← Back to Timeline</a>

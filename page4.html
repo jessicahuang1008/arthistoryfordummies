@@ -12,9 +12,9 @@
       text-align: center;
       background-image:
         linear-gradient(rgba(227,243,252,0.5), rgba(227,243,252,0.5)),
-        url("https://www.visituffizi.org/img/artworks/caravaggio-bacchus.jpg");
+        url("https://upload.wikimedia.org/wikipedia/commons/9/99/Claude_Monet-Madame_Monet_en_costume_japonais.jpg");
       background-size: cover;
-      background-position: 35% 25%;
+      background-position: 35% 15%;
       background-attachment: fixed;
       -webkit-font-smoothing: antialiased;
       padding: 80px 20px;
@@ -23,7 +23,7 @@
     .content {
       background: rgba(227, 243, 252, 0.5);
       backdrop-filter: blur(4px);
-      color: #5d2725;
+      color: #801a0a;
       padding: 64px 32px;
       max-width: 900px;
       margin: 0 auto;
@@ -49,7 +49,7 @@
 
     p {
   font-size: 1.125rem;
-  color: #282421;
+  color: #801a0a;
   line-height: 1.75;
   margin-bottom: 30px;
   text-align: left;
@@ -81,7 +81,7 @@
   font-size: 0.95rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #5d2725;
+  color: #801a0a;
   opacity: 0.8;
   margin-bottom: 10px; /* space between artist and title */
 }
@@ -90,7 +90,7 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #5d2725;
+  color: #801a0a;
   margin-bottom: 8px; /* space before description */
 }
 
@@ -136,48 +136,167 @@
 }
 
   </style>
+
+  <style>
+    /* Artist carousel (5 circular slots, clickable to artist pages) */
+    .artist-carousel {
+      max-width: 700px;
+      margin: 2px auto 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .artist-carousel .track {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+    }
+
+    .artist-carousel a {
+      flex: 0 0 auto;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      border: 3px solid rgba(255,255,255,0.65);
+      scroll-snap-align: center;
+      background: #fff;
+      text-decoration: none;
+    }
+
+    .artist-carousel img { width: 100%; height: 100%; object-fit: cover; display:block; border-radius:50% }
+
+    /* label that appears on hover (last name only) */
+    .artist-carousel .artist-label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, 8px);
+      opacity: 0;
+      transition: opacity 220ms ease, transform 220ms ease;
+      pointer-events: none;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-weight: 600;
+      white-space: nowrap;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 4px 8px;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      transform-origin: center center;
+    }
+
+    .artist-carousel a:hover .artist-label { opacity: 1; transform: translate(-50%, 0); }
+
+    /* Zoom specific image (Peter Paul Rubens) */
+    .artist-carousel a.rubens img {
+      transform: scale(2);
+      transform-origin: top center;
+      object-position: 0% 30%;
+    }
+
+    /* Zoom specific image (Nicolas Poussin) */
+    .artist-carousel a.poussin img {
+      transform: scale(1.6);
+      transform-origin: center center;
+      object-position: 50% 25%;
+    }
+
+    /* Per-artist object-position controls (edit these values to adjust crop within the circle) */
+    /* Format: object-position: X% Y%;  — change numbers to move the image inside the circular frame */
+    .artist-carousel a.monet img { object-position: 50% 0%; }
+    .artist-carousel a.renoir img { object-position: 50% 50%; }
+    .artist-carousel a.pissarro img { object-position: 80% 60%; }
+    .artist-carousel a.cassatt img { object-position: 10% 10%; }
+    .artist-carousel a.degas img { object-position: 60% 0%; }
+
+    /* hide scrollbar on supported browsers */
+    .artist-carousel .track::-webkit-scrollbar { display: none; }
+    .artist-carousel .track { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .carousel-header { max-width:700px; margin: 32px auto 2px; text-align: center; }
+    .carousel-header h3 { font-family: 'Playfair Display', Georgia, serif; font-size:1.125rem; color:#1e406e; margin:0 0 6px; }
+    .carousel-header p { margin:0; color:#5d2725; font-size:0.95rem; line-height:1.6; }
+  </style>
 </head>
 
 <body>
 
   <div class="content">
-    <h1>Baroque (1600 – 1750)</h1>
+    <h1>Impressionism (1860 – 1920)</h1>
     <div class="divider"></div>
 
     <ul style="margin-bottom:30px; line-height:1.75; max-width:750px; margin-left:auto; margin-right:auto; padding-left:1.2em; text-align:left;">
-      <li>When people look at Baroque paintings like those by Caravaggio or Peter Paul Rubens, they notice strong contrast between light and shadow.</li>
-      <li>The figures look caught mid-action, with twisting bodies and dramatic gestures instead of stiff poses.</li>
+      <li>When people look at Impressionist paintings like those by Degas or Renoir, they notice loose brushstrokes and vibrant colors.</li>
+      <li>The figures often appear in natural settings, capturing fleeting moments of everyday life.</li>
       <li>The scene often feels diagonal and energetic rather than balanced and calm.</li>
       <li>Faces show big, clear emotions, and textures such as skin, fabric, and metal look rich and real.</li>
-      <li>All of this makes the work feel intense and theatrical — a key sign of Baroque art.</li>
+      <li>All of this makes the work feel intense and theatrical — a key sign of Impressionist art.</li>
     </ul>
 
     <!-- ARTWORK 1 -->
     <div class="art-section">
-      <img src="https://www.datocms-assets.com/103094/1688661508-1506165873655660-artemisia-giuditta-principale.jpg?auto=format%2Ccompress&cs=srgb&max-w=800" alt="Judith Beheading Holofernes painting by Artemisia Gentileschi">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Danceringreen.jpg/960px-Danceringreen.jpg" alt="Swaying Dancer (Dancer in Green) by Edgar Degas">
       <div class="art-info">
-  <div class="artist">Artemisia Gentileschi</div>
-  <div class="artwork-title">Judith Beheading Holofernes</div>
-      <div class="caption-sub">Judith Beheading Holofernes by Artemisia Gentileschi shows key Baroque features: strong contrast between light and dark, a violent scene shown at its most intense moment, and figures that look solid and physically engaged. The tight framing, visible effort in the bodies, and clear emotion create drama and realism that are typical of Baroque painting. </div>
+  <div class="artist">Edgar Degas</div>
+  <div class="artwork-title">Swaying Dancer (Dancer in Green)</div>
+      <div class="caption-sub">Degas captures a fleeting rehearsal moment with delicate brushwork and a focus on movement and posture, highlighting the everyday immediacy central to Impressionism.</div>
     </div>
 
     <!-- ARTWORK 2 -->
     <div class="art-section">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/960px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg" alt="Las Meninas painting by Diego Velázquez">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Pierre-Auguste_Renoir%2C_French_-_The_Large_Bathers_-_Google_Art_Project.jpg" alt="The Large Bathers by Pierre-Auguste Renoir">
       <div class="art-info">
-  <div class="artist">Diego Velázquez</div>
-  <div class="artwork-title">Las Meninas</div>
-      <div class="caption-sub">Las Meninas by Diego Velázquez shows key Baroque traits: strong light-and-dark contrast, realistic people caught in a natural moment, and a deep, believable space that pulls you into the room. It also feels dramatic and alive, making you part of the scene rather than just someone looking at a flat picture.</div>
+  <div class="artist">Pierre-Auguste Renoir</div>
+  <div class="artwork-title">The Large Bathers</div>
+      <div class="caption-sub">Renoir's warm palette and soft handling of light emphasize sensual color and the pleasure of outdoor leisure, characteristic of Impressionist painting.</div>
     </div>
 
     <!-- ARTWORK 3 -->
     <div class="art-section">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Peter_Paul_Rubens_-_The_Apotheosis_of_Henry_IV_and_the_Proclamation_of_the_Regency_of_Marie_de_M%C3%A9dicis_-_WGA20342.jpg/960px-Peter_Paul_Rubens_-_The_Apotheosis_of_Henry_IV_and_the_Proclamation_of_the_Regency_of_Marie_de_M%C3%A9dicis_-_WGA20342.jpg?20230414204055"
-     alt="The Apotheosis of Henry IV and the Proclamation of the Regency of Marie de Médici by Peter Paul Rubens">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Morisot_Jeune_fille_dans_un_parc_%28RO_708%29.jpg" alt="Young Girl in a Park by Berthe Morisot">
       <div class="art-info">
-  <div class="artist">Peter Paul Rubens</div>
-  <div class="artwork-title">The Apotheosis of Henry IV and the Proclamation of the Regency of Marie de Médici</div>
-      <div class="caption-sub">This painting by renowned Flemish Baroque artist, Peter Paul Rubens, shows the style through swirling movement, crowded figures, and a dramatic mix of heaven and earth in one energetic scene. Bright light, rich color, and larger-than-life bodies create a sense of grandeur and motion, making the event feel powerful and theatrical rather than calm or still.</div>
+  <div class="artist">Berthe Morisot</div>
+  <div class="artwork-title">Young Girl in a Park</div>
+      <div class="caption-sub">Morisot's intimate scene uses soft brushwork and subtle color shifts to convey atmosphere and the quiet presence of everyday life.</div>
+    </div>
+
+    <div class="carousel-header">
+      <h3>Artist highlights</h3>
+    </div>
+    <!-- Artist carousel: five circular image slots linking to artist Wikipedia pages -->
+    <div class="artist-carousel" aria-label="Artist carousel">
+      <div class="track">
+        <a href="https://en.wikipedia.org/wiki/Claude_Monet" class="monet" target="_blank" rel="noopener" aria-label="Claude Monet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Pierre-Auguste_Renoir%2C_1875%2C_Claude_Monet%2C_oil_on_canvas%2C_84_x_60.5_cm%2C_Mus%C3%A9e_d%27Orsay%2C_Paris.jpg
+          " alt="Claude Monet">
+          <span class="artist-label">Monet</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Pierre-Auguste_Renoir" class="renoir" target="_blank" rel="noopener" aria-label="Pierre-Auguste Renoir">
+          <img src="https://uploads2.wikiart.org/images/pierre-auguste-renoir/self-portrait-1899.jpg!Large.jpg" alt="Pierre-Auguste Renoir">
+          <span class="artist-label">Renoir</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Camille_Pissarro" class="pissarro" target="_blank" rel="noopener" aria-label="Camille Pissarro">
+          <img src="https://www.arthistoryproject.com/site/assets/files/6852/camille_pissarro-self-portrait-1873-trivium-art-history.jpg" alt="Camille Pissarro">
+          <span class="artist-label">Pissarro</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Mary_Cassatt" class="cassatt" target="_blank" rel="noopener" aria-label="Mary Cassatt">
+          <img src="https://uploads6.wikiart.org/images/mary-cassatt/self-portrait.jpg!Large.jpg" alt="Mary Cassatt">
+          <span class="artist-label">Cassatt</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Edgar_Degas" class="degas" target="_blank" rel="noopener" aria-label="Edgar Degas">
+          <img src="https://uploads1.wikiart.org/images/edgar-degas/self-portrait-1855.jpg!Large.jpg" alt="Edgar Degas">
+          <span class="artist-label">Degas</span>
+        </a>
+      </div>
     </div>
 
     <a href="index.html">← Back to Timeline</a>

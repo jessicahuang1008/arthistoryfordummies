@@ -165,7 +165,7 @@
       color: #ffffff;
       font-weight: 600;
       white-space: nowrap;
-      background: rgba(255, 255, 255, 0.55);
+      background: rgba(0, 0, 0, 0.55);
       padding: 4px 8px;
       border-radius: 999px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.04);
@@ -179,6 +179,13 @@
       transform: scale(2);
       transform-origin: top center;
       object-position: 0% 30%;
+    }
+
+    /* Zoom specific image (Nicolas Poussin) */
+    .artist-carousel a.poussin img {
+      transform: scale(1.6);
+      transform-origin: center center;
+      object-position: 50% 25%;
     }
 
     /* hide scrollbar on supported browsers */
@@ -275,7 +282,7 @@
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Peter_Paul_Rubens_-_Selfportrait_-_Google_Art_Project.jpg/1280px-Peter_Paul_Rubens_-_Selfportrait_-_Google_Art_Project.jpg" alt="Peter Paul Rubens">
           <span class="artist-label">Rubens</span>
         </a>
-        <a href="https://en.wikipedia.org/wiki/Nicolas_Poussin" target="_blank" rel="noopener" aria-label="Nicolas Poussin">
+        <a href="https://en.wikipedia.org/wiki/Nicolas_Poussin" class="poussin" target="_blank" rel="noopener" aria-label="Nicolas Poussin">
           <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Nicolas_Poussin_078.jpg" alt="Nicolas Poussin">
           <span class="artist-label">Poussin</span>
         </a>

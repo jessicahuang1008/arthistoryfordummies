@@ -138,6 +138,88 @@
 }
 
   </style>
+
+  <style>
+    /* Artist carousel (5 circular slots, clickable to artist pages) */
+    .artist-carousel {
+      max-width: 700px;
+      margin: 2px auto 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .artist-carousel .track {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+    }
+
+    .artist-carousel a {
+      flex: 0 0 auto;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      border: 3px solid rgba(255,255,255,0.65);
+      scroll-snap-align: center;
+      background: #fff;
+      text-decoration: none;
+    }
+
+    .artist-carousel img { width: 100%; height: 100%; object-fit: cover; display:block; border-radius:50% }
+
+    /* label that appears on hover (last name only) */
+    .artist-carousel .artist-label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, 8px);
+      opacity: 0;
+      transition: opacity 220ms ease, transform 220ms ease;
+      pointer-events: none;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-weight: 600;
+      white-space: nowrap;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 4px 8px;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      transform-origin: center center;
+    }
+
+    .artist-carousel a:hover .artist-label { opacity: 1; transform: translate(-50%, 0); }
+
+    /* Zoom specific image (Peter Paul Rubens) */
+    .artist-carousel a.rubens img {
+      transform: scale(2);
+      transform-origin: top center;
+      object-position: 0% 30%;
+    }
+
+    /* Zoom specific image (Nicolas Poussin) */
+    .artist-carousel a.poussin img {
+      transform: scale(1.6);
+      transform-origin: center center;
+      object-position: 50% 25%;
+    }
+
+    /* hide scrollbar on supported browsers */
+    .artist-carousel .track::-webkit-scrollbar { display: none; }
+    .artist-carousel .track { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .carousel-header { max-width:700px; margin: 32px auto 2px; text-align: center; }
+    .carousel-header h3 { font-family: 'Playfair Display', Georgia, serif; font-size:1.125rem; color:#1e406e; margin:0 0 6px; }
+    .carousel-header p { margin:0; color:#5d2725; font-size:0.95rem; line-height:1.6; }
+  </style>
 </head>
 
 <body>
@@ -179,6 +261,35 @@
   <div class="artist">Jacques-Louis David</div>
   <div class="artwork-title">The Oath of the Horatii</div>
       <div class="caption-sub">The Oath of the Horatii by Jacques-Louis David shows key Neoclassical features: calm, heroic poses, clear outlines, and a sense of order and dignity. The painting is formal and idealized, showing three brothers swearing an oath in a grand historical moment — typical of Neoclassical art's focus on virtue and moral lessons.</div>
+    </div>
+
+    <div class="carousel-header">
+      <h3>Artist highlights</h3>
+    </div>
+    <!-- Artist carousel: five circular image slots linking to artist Wikipedia pages -->
+    <div class="artist-carousel" aria-label="Artist carousel">
+      <div class="track">
+        <a href="https://en.wikipedia.org/wiki/Claude_Monet" target="_blank" rel="noopener" aria-label="Claude Monet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Bild-Ottavio_Leoni%2C_Caravaggio.jpg/960px-Bild-Ottavio_Leoni%2C_Caravaggio.jpg" alt="Caravaggio">
+          <span class="artist-label">Monet</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Pierre-Auguste_Renoir" target="_blank" rel="noopener" aria-label="Pierre-Auguste Renoir">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Artemisia_Gentileschi_Selfportrait_Martyr.jpg/800px-Artemisia_Gentileschi_Selfportrait_Martyr.jpg" alt="Artemisia Gentileschi">
+          <span class="artist-label">Renoir</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Camille_Pissarro" target="_blank" rel="noopener" aria-label="Camille Pissarro">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Diego_Vel%C3%A1zquez_Autorretrato_45_x_38_cm_-_Colecci%C3%B3n_Real_Academia_de_Bellas_Artes_de_San_Carlos_-_Museo_de_Bellas_Artes_de_Valencia.jpg" alt="Diego Velázquez">
+          <span class="artist-label">Pissarro</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Mary_Cassat" class="rubens" target="_blank" rel="noopener" aria-label="Mary Cassatt">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Peter_Paul_Rubens_-_Selfportrait_-_Google_Art_Project.jpg/1280px-Peter_Paul_Rubens_-_Selfportrait_-_Google_Art_Project.jpg" alt="Peter Paul Rubens">
+          <span class="artist-label">Cassatt</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Edgar_Degas" class="poussin" target="_blank" rel="noopener" aria-label="Edgar Degas">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Nicolas_Poussin_078.jpg" alt="Nicolas Poussin">
+          <span class="artist-label">Degas</span>
+        </a>
+      </div>
     </div>
 
     <a href="index.html">← Back to Timeline</a>
